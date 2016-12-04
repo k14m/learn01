@@ -1,7 +1,11 @@
 <?php
 
-phpinfo();
-$dir = readdir(/home/work/);
-echo $dir;
-
+//phpinfo();
+$handle = opendir('/home/work/');
+echo "<pre>";
+    while (false !== ($entry = readdir($handle))) {
+        echo "$entry\n";
+    }
+echo "</pre>";
+closedir($handle);
 ?>
